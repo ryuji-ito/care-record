@@ -1,24 +1,47 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false, unique: true|
+|pass|string|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :residents
+- has_many :floors
+- has_many :records
 
-* Ruby version
+## floors
+|Column|Type|Options|
+|------|----|-------|
+|floor_name|string|null: false|
+|resident|string|
+|user_id|integer|null: false|
 
-* System dependencies
+### Association
+- belongs_to :user
+- has_many :residents
 
-* Configuration
+## residents
+|Column|Type|Options|
+|------|----|-------|
+|name|string|
+|floor_id|integer|null: false, foreign_key: true|
 
-* Database creation
+### Association
+- belongs_to :floor
+- has_many :records
+- belongs_to :user
 
-* Database initialization
+## records
+|Column|Type|Options|
+|------|----|-------|
+|resident_id|integer|null: false, foreign_key: true|
+|text|text|
+|image|text|
+|writer_name|string|null: false|
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :resident
+- belongs_to :user
