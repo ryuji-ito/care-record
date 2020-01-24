@@ -1,0 +1,33 @@
+.facility
+  .facility__header
+    .facility__header__name
+      = current_user.name
+    .facility__header__config
+      .facility__header__config__new-floor
+        = link_to new_floor_path do
+          = icon('fas', 'seedling', class: 'icon')
+      .facility__header__config__new-resident
+        = link_to "#" do
+          = icon('fas', 'bed', class: 'icon')
+      .facility__header__config__edit-user
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'user-cog', class: 'icon')
+  .number
+    .number__floor
+      フロア名 / 編集
+    .number__resident
+      入居者氏名
+
+  .floor
+    .floor__name
+      -# - current_user.floors.each do |floor|
+        = link_to "#" do
+          .floor__name__box
+            = floor.floor_name
+            = link_to "編集", "#", class: "edit"
+
+    .floor__resident
+      .floor__resident__name
+        ポムポムプリン　94さい　要介護４
+      .floor__resident__name2
+        キティさんは仕事を選ばない

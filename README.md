@@ -15,7 +15,7 @@
 ## floors
 |Column|Type|Options|
 |------|----|-------|
-|floor_name|string|null: false|
+|name|string|null: false|
 |resident|string|
 |user_id|integer|null: false|
 
