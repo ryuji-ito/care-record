@@ -18,7 +18,7 @@ class ResidentsController < ApplicationController
   end
 
   def update
-    @residetn = Resident.find(params[:id])
+    @resident = Resident.find(params[:id])
     if @resident.update(resident_params)
       redirect_to floor_records_path(@floor), notice: 'フロアを更新しました'
     else
