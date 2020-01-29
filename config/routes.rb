@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "floors#index"
   resources :users, only: [:edit, :update]
   resources :floors, only: [:index, :new, :create, :edit, :update]
-  resources :residents, only: [:new, :create, :edit, :update]
-
-
+  resources :residents, only: [:new, :create, :edit, :update] do
+    resources :records, only: [:index, :create]
+  end
 end

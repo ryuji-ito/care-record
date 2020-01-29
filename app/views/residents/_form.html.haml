@@ -1,23 +1,24 @@
 = form_for resident do |f|
-  .chat-group-form__errors
-    %h2 10件のエラーが発生しました
-    %ul
-      %li nameを入力してください
-  .chat-group-form__field
-    .chat-group-form__field--left
-      = f.label :name, class: 'chat-group-form__label'
-    .chat-group-form__field--right
-      = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
-  .chat-group-form__field.clearfix
+  - if resident.errors.any?
+    .resident-form__errors
+      %h2= "#{resident.errors.full_messages.count}件のエラーが発生しました。"
+      %ul
+        - resident.errors.full_messages.each do |message|
+          %li= message
+  .resident-form__field
+    .resident-form__field--left
+      = f.label :氏名, class: 'resident-form__label'
+    .resident-form__field--right
+      = f.text_field :name, class: 'resident-form__input', placeholder: '入居者様のお名前を入力してください'
+  .resident-form__field.clearfix
     / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-  .chat-group-form__field.clearfix
-    .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
-    .chat-group-form__field--right
-      / グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      -# = f.collection_check_boxes :user_ids, User.all, :id, :name
+  .resident-form__field.clearfix
+    .resident-form__field--left
+      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} 所属するフロア
+    .resident-form__field--right
+      = f.text_field :name, class: 'resident-form__floor'
       / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
-  .chat-group-form__field.clearfix
-    .chat-group-form__field--left
-    .chat-group-form__field--right
-      = f.submit class: 'chat-group-form__action-btn'
+  .resident-form__field.clearfix
+    .resident-form__field--left
+    .resident-form__field--right
+      = f.submit "完了", class: 'resident-form__action-btn'

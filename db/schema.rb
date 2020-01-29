@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200126144130) do
+ActiveRecord::Schema.define(version: 20200129112048) do
 
   create_table "floors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -21,10 +21,22 @@ ActiveRecord::Schema.define(version: 20200126144130) do
     t.index ["user_id"], name: "index_floors_on_user_id", using: :btree
   end
 
+  create_table "records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.string   "image"
+    t.integer  "floor_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "resident_id"
+    t.string   "writer_name"
+    t.index ["floor_id"], name: "index_records_on_floor_id", using: :btree
+  end
+
   create_table "residents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "floor_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -42,4 +54,5 @@ ActiveRecord::Schema.define(version: 20200126144130) do
   end
 
   add_foreign_key "floors", "users"
+  add_foreign_key "records", "floors"
 end

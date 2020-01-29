@@ -1,8 +1,9 @@
 h1 {
   letter-spacing: 2px;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
   text-align: center;
+  color: green;
 }
 h2 {
   margin-bottom: 10px;
@@ -24,13 +25,13 @@ li {
 
 
 
-.chat-group-form {
-  width: 980px;
+.resident-form {
+  width: 1200px;
   margin: 60px auto;
   padding: 40px;
   background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 10px solid #ddd;
+  border-radius: 15px;
   box-sizing: border-box;
   &__errors {
     margin: 30px 0;
@@ -53,14 +54,20 @@ li {
     box-sizing: border-box;
   }
   &__action-btn {
+    width: 400px;
+    height: 50px;
+    font-size: 25px;
     display: inline-block;
     padding: 12px 20px;
     color: #fff;
-    background-color: #38aef0;
+    background-color: green;
     border: 0;
+    margin-left: 80px;
+    line-height: 25px;
   }
   &__field {
     margin-top: 30px;
+    width: 900px;
     &:after {
       content: "";
       clear: both;
@@ -76,32 +83,12 @@ li {
     &--right {
       float: right;
       width: 70%;
-    }
-  }
-}
-
-.chat-group-user {
-  padding: 0 15px;
-  line-height: 50px;
-  font-size: 14px;
-  border-bottom: 1px solid #ddd;
-  &:after {
-    content: "";
-    clear: both;
-    display: block;
-  }
-  &__name {
-    float: left;
-  }
-  &__btn {
-    float: right;
-    display: inline-block;
-    cursor: pointer;
-    &--add {
-      color: #38aef0;
-    }
-    &--remove {
-      color: #f05050;
+      .resident-form__floor {
+        line-height: 30px;
+        width: 300px;
+        height: 50px;
+        padding: 10px 15px;
+      }
     }
   }
 }
