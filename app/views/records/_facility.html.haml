@@ -7,7 +7,7 @@
         = link_to new_floor_path do
           = icon('fas', 'seedling', class: 'icon')
       .facility__header__config__new-resident
-        = link_to "#" do
+        = link_to new_resident_path do
           = icon('fas', 'bed', class: 'icon')
       .facility__header__config__edit-user
         = link_to edit_user_path(current_user) do
@@ -20,10 +20,10 @@
 
   .floor
     .floor__name
-      -# - current_user.floors.each do |floor|
+      - current_user.floors.each do |floor|
         = link_to "#" do
           .floor__name__box
-            = floor.floor_name
+            = floor.name
             = link_to "編集", "#", class: "edit"
 
     .floor__resident
