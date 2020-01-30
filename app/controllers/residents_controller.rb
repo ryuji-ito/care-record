@@ -30,7 +30,7 @@ class ResidentsController < ApplicationController
   private
 
   def resident_params
-    params.require(:resident).permit(:name).merge(user_id: current_user.id)
+    params.require(:resident).permit(:name, :floor)
   end
 
 end
