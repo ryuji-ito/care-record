@@ -1,8 +1,7 @@
 class ResidentsController < ApplicationController
+  before_action :set_floor, only: [:index, :create]
 
   def index
-    @floor = Floor.find_by(id: params[:id])
-    @resident = @floor.residents
   end
 
   def new
@@ -34,7 +33,10 @@ class ResidentsController < ApplicationController
   private
 
   def resident_params
-    params.require(:resident).permit(:name, floor_ids: []).merge(user_id: current_user.id)
+    params.require(:resident).permit(:name, {floor_ids: []}).merge(user_id: current_user.id)
   end
 
+  def set_floor
+    @floor = Floor.find(params[:floor_id])
+  end
 end
