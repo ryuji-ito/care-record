@@ -1,0 +1,5 @@
+class RemoveFlooridToResidents < ActiveRecord::Migration[5.0]
+  def change
+    remove_column :residents, :floor_id, :integer
+  end
+end

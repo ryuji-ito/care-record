@@ -1,10 +1,10 @@
 .resident
   .resident__header
     .resident__header__box
-      星のカービィ　様
+      = @resident.name
     = link_to "編集", "#", class: "resident__header__edit"
   .records
-    -# = render @record
+    = render @records
 
   .composition
     .composition__record

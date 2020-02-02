@@ -1,7 +1,8 @@
 class FloorsController < ApplicationController
-  before_action :move_to_index, except: [:index]
+  before_action :set_floor, only: [:index, :create]
 
   def index
+    # @floor = Floor.where(floor_id: params[:floor_id])
   end
 
   def new
@@ -40,10 +41,6 @@ class FloorsController < ApplicationController
   end
 
   def set_floor
-    @floor = Floor.find(params[:id])
-  end
-
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    @floor = Floor.where(floor_id: params[:floor_id])
   end
 end

@@ -10,6 +10,7 @@
   width: 300px;
   color: #000099;
   float: left;
+  height: 100%;
   &__header {
     background-color: #00bfff;
     height: 80px;
@@ -68,7 +69,6 @@
 .floor {
   height: calc(100vh - 105px);
   width: 300px;
-  display: flex;
   &__name {
     width: 150px;
     background-color: #f8f8ff;
@@ -76,6 +76,7 @@
     padding-top: 25px;
     white-space: nowrap;
     overflow: scroll;
+    height: 100%;
     &__box {
       margin-bottom: 25px;
       height: 25px;
@@ -86,15 +87,23 @@
       }
     }
   }
-  &__resident {
-    width: 150px;
-    background-color: #f8f8ff;
-    text-align: center;
-    padding-top: 25px;
-    padding-left: 10px;
-    white-space: nowrap;
-    overflow: scroll;
-    &__name {
+}
+
+.floor__resident {
+  height: calc(100vh - 105px);
+  margin-top: 105px;
+  width: 150px;
+  background-color: #f8f8ff;
+  text-align: center;
+  margin-left: 150px;
+  white-space: nowrap;
+  overflow: scroll;
+  position: absolute;
+  padding-top: 25px;
+  padding-left: 10px;
+  &__name {
+    margin-bottom: 25px;
+    &__index {
       margin-bottom: 25px;
     }
   }

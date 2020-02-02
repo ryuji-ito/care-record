@@ -45,3 +45,13 @@
 ### Association
 - belongs_to :resident
 - belongs_to :user
+
+## Floor_residents
+|Column|Type|Options|
+|------|----|-------|
+|floor_id|integer|null: false, foreign_key: true|
+|resident_id|integer|null :false, foreign_key: true|
+
+### Association
+- belongs_to :floor
+- belongs_to :resident

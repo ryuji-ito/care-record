@@ -1,4 +1,8 @@
 class ResidentsController < ApplicationController
+  before_action :set_floor, only: [:index, :create]
+
+  def index
+  end
 
   def new
     @resident = Resident.new
@@ -7,9 +11,9 @@ class ResidentsController < ApplicationController
   def create
     @resident = Resident.new(resident_params)
     if @resident.save
-      redirect_to root_path, notice: 'グループを作成しました'
+      redirect_to root_path, notice: '入居者様を新たに登録しました'
     else
-      render :index
+      render :new
     end
   end
 
@@ -20,17 +24,19 @@ class ResidentsController < ApplicationController
   def update
     @resident = Resident.find(params[:id])
     if @resident.update(resident_params)
-      redirect_to floor_records_path(@floor), notice: 'フロアを更新しました'
+      redirect_to root_path, notice: 'フロアを更新しました'
     else
       render :edit
     end
   end
 
-
   private
 
   def resident_params
-    params.require(:resident).permit(:name, :floor)
+    params.require(:resident).permit(:name, {floor_ids: []}).merge(user_id: current_user.id)
   end
 
+  def set_floor
+    @floor = Floor.find(params[:floor_id])
+  end
 end

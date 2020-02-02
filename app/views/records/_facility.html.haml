@@ -21,13 +21,7 @@
   .floor
     .floor__name
       - current_user.floors.each do |floor|
-        = link_to "#" do
+        = link_to floor_residents_path(floor) do
           .floor__name__box
             = floor.name
             = link_to "編集", "#", class: "edit"
-
-    .floor__resident
-      .floor__resident__name
-        ポムポムプリン　94さい　要介護４
-      .floor__resident__name2
-        キティさんは仕事を選ばない
