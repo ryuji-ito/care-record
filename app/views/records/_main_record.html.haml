@@ -16,12 +16,12 @@
 
   .composition
     .composition__record
-      = form_for "#" do |f|
+      = form_for [@floor, @resident, @record] do |f|
         .composition__record__box
           = f.text_area :content, class: "input-text", placeholder: "内容を入力してください"
           = f.label :image, class: "label" do
             = icon("fas", "camera-retro", class: "label__icon" )
             = f.file_field :image, class: "file"
-          = f.text_field :content, class: "input-name", placeholder: "記述者名を入力"
+          = f.text_field :writer_name, class: "input-name", placeholder: "記述者名を入力"
         .composition__record__submit
           = f.submit "記入", class: "submit"

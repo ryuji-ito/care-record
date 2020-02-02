@@ -2,7 +2,6 @@ class FloorsController < ApplicationController
   before_action :set_floor, only: [:index, :create]
 
   def index
-    # @floor = Floor.where(floor_id: params[:floor_id])
   end
 
   def new

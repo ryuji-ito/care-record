@@ -9,9 +9,9 @@ class RecordsController < ApplicationController
   def create
     @record = @resident.records.new(record_params)
     if @record.save
-      redirect_to (@resident), notice: '記録を保存しました'
+      redirect_to floor_resident_records_path(@resident), notice: '記録を保存しました'
     else
-      @records = @resident.records.includes(:user)
+      @records = @floor.resident.records.includes(:user)
       flash.now[:alert] = '内容と記述者名を入力してください'
       render :index
     end
@@ -20,7 +20,7 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:content, :image).merge(user_id: current_user.id)
+    params.require(:record).permit(:content, :image, :writer_name).merge(user_id: current_user.id)
   end
 
   def set_resident

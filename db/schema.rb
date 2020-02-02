@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200130062721) do
+ActiveRecord::Schema.define(version: 20200202124307) do
 
   create_table "floor_residents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "floor_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20200130062721) do
     t.datetime "updated_at",  null: false
     t.integer  "resident_id"
     t.string   "writer_name"
+    t.integer  "user_id"
     t.index ["floor_id"], name: "index_records_on_floor_id", using: :btree
   end
 
