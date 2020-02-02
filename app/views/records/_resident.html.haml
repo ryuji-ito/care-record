@@ -1,0 +1,6 @@
+.floor__resident
+  .floor__resident__name
+    - @floor.residents.each do |resident|
+      .floor__resident__name__index
+        =link_to floor_resident_records_path(@floor, resident) do 
+          = resident.name

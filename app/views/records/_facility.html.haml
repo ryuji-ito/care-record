@@ -25,8 +25,3 @@
           .floor__name__box
             = floor.name
             = link_to "編集", "#", class: "edit"
-
-    .floor__resident
-      .floor__resident__name
-        - @floor.residents.each do |resident|
-          = resident.name
