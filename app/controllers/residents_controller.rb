@@ -1,5 +1,5 @@
 class ResidentsController < ApplicationController
-  before_action :set_floor, only: [:index, :create]
+  before_action :set_floor, only: [:index]
 
   def index
   end
@@ -13,7 +13,7 @@ class ResidentsController < ApplicationController
     if @resident.save
       redirect_to root_path, notice: '入居者様を新たに登録しました'
     else
-      render :new
+      render :index
     end
   end
 

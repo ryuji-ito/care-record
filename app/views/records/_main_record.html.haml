@@ -3,8 +3,16 @@
     .resident__header__box
       = @resident.name
     = link_to "編集", "#", class: "resident__header__edit"
-  .records
-    = render @records
+  .record
+    .record__list
+      .record__list__index
+        .record__list__index__time
+          日時
+        .record__list__index__text
+          記録
+        .record__list__index__name
+          記述者
+      = render @record
 
   .composition
     .composition__record
