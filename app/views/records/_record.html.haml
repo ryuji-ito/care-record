@@ -1,9 +1,10 @@
 .record__list__data
-  .record__list__data__time
-    = record.created_at.try(:strftime, "%Y/%m/%d %H:%M")
-  .record__list__data__text
-    - if record.content.present?
-      = record.content
-    = image_tag record.image.url, class: 'record__date__image' if record.image.present?
-  .record__list__data__name
-    = record.writer_name
+  .record__list__data__box
+    .record__list__data__box__time
+      = record.created_at.try(:strftime, "%Y/%m/%d %H:%M")
+    .record__list__data__box__text
+      - if record.content.present?
+        = record.content
+      = image_tag record.image.url, class: 'record__date__image' if record.image.present?
+    .record__list__data__box__name
+      = record.writer_name
