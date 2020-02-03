@@ -11,14 +11,14 @@
     .resident-form__field--right
       = f.text_field :name, class: 'resident-form__input', placeholder: '入居者様のお名前を入力してください'
   .resident-form__field.clearfix
-    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
   .resident-form__field.clearfix
     .resident-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} 所属するフロア
+      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} 入居するフロア
     .resident-form__field--right
       = f.collection_check_boxes :floor_ids, Floor.all, :id, :name
-      / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
   .resident-form__field.clearfix
+    .resident-form__field--message
+      ＊注意＊　所属するフロアは１つ以上選択することができます。
     .resident-form__field--left
     .resident-form__field--right
       = f.submit "完了", class: 'resident-form__action-btn'

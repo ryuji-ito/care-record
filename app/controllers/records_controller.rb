@@ -3,7 +3,7 @@ class RecordsController < ApplicationController
 
   def index
     @record = Record.new
-    @records = @resident.records.includes(:user)
+    @records = @resident.records.includes(:resident)
   end
 
   def create
@@ -11,7 +11,7 @@ class RecordsController < ApplicationController
     if @record.save
       redirect_to floor_resident_records_path(@resident), notice: '記録を保存しました'
     else
-      @records = @floor.resident.records.includes(:user)
+      @records = @resident.records.includes(:resident)
       flash.now[:alert] = '内容と記述者名を入力してください'
       render :index
     end

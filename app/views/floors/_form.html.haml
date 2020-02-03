@@ -7,11 +7,12 @@
           %li= message
   .floor-form__field
     .floor-form__field--left
-      = f.label :name, class: 'floor-form__label'
+      = f.label :"フロア名", class: 'floor-form__label'
     .floor-form__field--right
       = f.text_field :name, class: 'floor_name floor-form__input', placeholder: 'フロアの名前を入力してください'
   .floor-form__field.clearfix
-    / この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
+    .floor-form__field-message
+      ＊注意＊　既に作成しているフロアと同じ名前のフロアは作成できません。
   .floor-form__field.clearfix
     .floor-form__field--left
     .floor-form__field--right

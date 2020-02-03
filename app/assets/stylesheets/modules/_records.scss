@@ -166,26 +166,29 @@
         }
       }
       &__data {
-        display: flex;
-        &__time {
-          width: 150px;
-          border: solid 1px;
-          height: 35px;
-          line-height: 35px;
-          text-align: center;
-        }
-        &__text {
-          width: 100%;
-          border: solid 1px;
-          height: 35px;
-          line-height: 35px;
-        }
-        &__name {
-          width: 150px;
-          border: solid 1px;
-          height: 35px;
-          line-height: 35px;
-          text-align: center;
+        &__box {
+          display: flex;
+          &__time {
+            width: 150px;
+            border: solid 1px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            font-size: 12px;
+          }
+          &__text {
+            width: 100%;
+            border: solid 1px;
+            height: 35px;
+            line-height: 35px;
+          }
+          &__name {
+            width: 150px;
+            border: solid 1px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+          }
         }
       }
     }
