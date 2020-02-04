@@ -24,7 +24,7 @@ class FloorsController < ApplicationController
   def update
     @floor = Floor.find(params[:id])
     if @floor.update(floor_params)
-      redirect_to floor_records_path(@floor), notice: 'フロアを更新しました'
+      redirect_to floor_residents_path(@floor), notice: 'フロアを更新しました'
     else
       render :edit
     end

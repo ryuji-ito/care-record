@@ -1,5 +1,5 @@
 class ResidentsController < ApplicationController
-  before_action :set_floor, only: [:index]
+  before_action :set_floor, only: [:index, :update]
 
   def index
   end
@@ -23,8 +23,9 @@ class ResidentsController < ApplicationController
 
   def update
     @resident = Resident.find(params[:id])
+    @floor = Floor.find(params[:id])
     if @resident.update(resident_params)
-      redirect_to root_path, notice: 'フロアを更新しました'
+      redirect_to floor_resident_records_path(@floor, @resident), notice: '入居者を更新しました'
     else
       render :edit
     end
@@ -37,6 +38,6 @@ class ResidentsController < ApplicationController
   end
 
   def set_floor
-    @floor = Floor.find(params[:floor_id])
+    @floor = Floor.where(floor_id: params[:floor_id])
   end
 end

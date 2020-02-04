@@ -2,7 +2,7 @@
   .resident__header
     .resident__header__box
       = @resident.name
-    = link_to "編集", "#", class: "resident__header__edit"
+    = link_to "編集", edit_resident_path(@resident.id), class: "resident__header__edit"
   .record
     .record__list
       .record__list__index
