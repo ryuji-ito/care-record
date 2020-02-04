@@ -1,5 +1,5 @@
 class FloorsController < ApplicationController
-  before_action :set_floor, only: [:index, :create]
+  before_action :set_floor, only: [:edit, :update]
 
   def index
   end
@@ -11,7 +11,7 @@ class FloorsController < ApplicationController
   def create
     @floor = Floor.new(floor_params)
     if @floor.save
-      redirect_to root_path, notice: 'グループを作成しました'
+      redirect_to floor_residents_path(@floor), notice: 'グループを作成しました'
     else
       render :new
     end
@@ -40,6 +40,6 @@ class FloorsController < ApplicationController
   end
 
   def set_floor
-    @floor = Floor.where(floor_id: params[:floor_id])
+    @floor = Floor.find(params[:floor_id])
   end
 end
