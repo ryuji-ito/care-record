@@ -14,7 +14,7 @@ class ResidentsController < ApplicationController
     if @resident.save
       redirect_to root_path, notice: '入居者様を新たに登録しました'
     else
-      render :index
+      render :new
     end
   end
 

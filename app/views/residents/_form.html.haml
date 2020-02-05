@@ -18,7 +18,8 @@
       = f.collection_check_boxes :floor_ids, Floor.all, :id, :name
   .resident-form__field.clearfix
     .resident-form__field--message
-      ＊注意＊　所属するフロアは１つ以上選択することができます。
+      ＊注意＊　入居するフロアは2つ以上選択することができます。<br>
+      間違えた場合には各入居者の編集画面で入居するフロアを変更できます。
     .resident-form__field--left
     .resident-form__field--right
       = f.submit "完了", class: 'resident-form__action-btn'

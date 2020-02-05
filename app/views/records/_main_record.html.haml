@@ -18,7 +18,7 @@
     .composition__record
       = form_for [@floor, @resident, @record] do |f|
         .composition__record__box
-          = f.text_area :content, class: "input-text", placeholder: "内容を入力してください"
+          = f.text_area :content, class: "input-text", placeholder: "内容を入力してください。画像はカメラを選択してください"
           = f.label :image, class: "label" do
             = icon("fas", "camera-retro", class: "label__icon" )
             = f.file_field :image, class: "file"
