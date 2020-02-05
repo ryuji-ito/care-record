@@ -5,4 +5,5 @@ class Resident < ApplicationRecord
   has_many :floor_residents
   has_many :floors, through: :floor_residents
   validates :name, presence: true
+  # validates :floor_ids, acceptance: true
 end

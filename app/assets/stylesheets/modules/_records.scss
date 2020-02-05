@@ -5,6 +5,10 @@
 
 .wrapper {
   display: flex;
+  background-color: transparent;
+	background-image:
+	 radial-gradient(#00bfff 3px, transparent 3px);
+	background-size: 30px 30px;
 }
 
 .facility {
@@ -17,6 +21,7 @@
     height: 80px;
     padding: 20px;
     text-align: center;
+    border-radius: 50px;
     &__name {
       font-size: 18px;
       white-space: nowrap;
@@ -91,6 +96,7 @@
 
 .number {
   display: flex;
+  background-color: $w_color;
   &__floor {
     border: solid 1px;
     width: 150px;
@@ -157,6 +163,7 @@
     background-color: #87cefa;
     height: 80px;
     display: flex;
+    border-radius: 25px;
     &__box {
       width: 100%;
       text-align: center;
@@ -198,6 +205,7 @@
       width: 100%;
       &__index {
         display: flex;
+        background-color: $w_color;
         &__time {
           border: solid 1px;
           width: 150px;
@@ -221,8 +229,9 @@
         }
       }
       &__data {
-        padding-top: 1px;
-        padding-bottom: 3px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        background-color: $w_color;
         &__box {
           display: flex;
           &__time {
