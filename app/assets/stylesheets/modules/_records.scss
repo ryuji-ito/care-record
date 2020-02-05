@@ -166,6 +166,8 @@
         }
       }
       &__data {
+        padding-top: 1px;
+        padding-bottom: 3px;
         &__box {
           display: flex;
           &__time {
@@ -179,15 +181,15 @@
           &__text {
             width: 100%;
             border: solid 1px;
-            height: 35px;
             line-height: 35px;
+            white-space: normal;
           }
           &__name {
             width: 150px;
             border: solid 1px;
-            height: 35px;
             line-height: 35px;
             text-align: center;
+            white-space: normal;
           }
         }
       }
