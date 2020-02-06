@@ -1,15 +1,27 @@
 .account-page {
   .account-page__inner {
-    width: 980px;
+    width: 1200px;
     margin: 60px auto;
     padding: 60px;
-    background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
+    background-color: #FFFDE7;
+    background-size: 80px 80px;
+    background-image:
+	 linear-gradient(rgba(215,204,200,.7) 1%, rgba(215,204,200,.7) 1%, transparent 1%,
+	  transparent 99%, rgba(215,204,200,.7) 99%, rgba(215,204,200,.7) 100%),
+	 linear-gradient(90deg, rgba(215,204,200,.7) 1%, rgba(215,204,200,.7) 1%, transparent 1%,
+	  transparent 99%, rgba(215,204,200,.7) 99%, rgba(215,204,200,.7) 100%),
+	 linear-gradient(transparent, transparent 25%, rgba(215,204,200,.4) 25%, rgba(215,204,200,.4) 26%, transparent 26%,
+	  transparent 50%, rgba(215,204,200,.4) 50%, rgba(215,204,200,.4) 51%, transparent 51%,
+	  transparent 75%, rgba(215,204,200,.4) 75%, rgba(215,204,200,.4) 76%, transparent 76%, transparent 100%),
+	 linear-gradient(90deg, transparent, transparent 25%, rgba(215,204,200,.4) 25%, rgba(215,204,200,.4) 26%, transparent 26%,
+	  transparent 50%, rgba(215,204,200,.4) 50%, rgba(215,204,200,.4) 51%, transparent 51%,
+	  transparent 75%, rgba(215,204,200,.4) 75%, rgba(215,204,200,.4) 76%, transparent 76%, transparent 100%);
+
 
     .account-page__inner--left, .account-page__inner--right {
-      float: left;
-      width: 50%;
+      width: 70%;
     }
     &:after {
       clear: both;
@@ -24,6 +36,8 @@
       letter-spacing: 3px;
       font-size: 40px;
       font-weight: 200;
+      color: green;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
       &:after {
         content: '';
@@ -45,6 +59,7 @@
       color: #fff;
       background-color: #ccc;
       font-size: 14px;
+      border-radius: 40px;
     }
   }
 
@@ -79,14 +94,16 @@
     letter-spacing: 1px;
     text-align: center;
     border: none;
-    border-radius: 2px;
+    border-radius: 40px;
+    background-color: #7fff00;
   }
 
   input[type='submit'] {
     float: left;
     margin-top: 20px;
-    color: #fff;
-    background-color: #38aef0;
+    color: black;
+    background-color: #7fff00;
+    cursor: pointer;
   }
 
   .field-label {
