@@ -123,13 +123,13 @@ Devise.setup do |config|
   # config.send_password_change_notification = false
 
   # ==> Configuration for :confirmable
-  # A period that the user is allowed to access the website even without
+  # A period that the user is allowed to access the website even 
   # confirming their account. For instance, if set to 2.days, the user will be
-  # able to access the website for two days without confirming their account,
+  # able to access the website for two days  confirming their account,
   # access will be blocked just in the third day.
   # You can also set it to nil, which will allow the user to access the website
-  # without confirming their account.
-  # Default is 0.days, meaning the user cannot access the website without
+  #  confirming their account.
+  # Default is 0.days, meaning the user cannot access the website 
   # confirming their account.
   # config.allow_unconfirmed_access_for = 2.days
 
@@ -151,7 +151,7 @@ Devise.setup do |config|
   # config.confirmation_keys = [:email]
 
   # ==> Configuration for :rememberable
-  # The time the user will be remembered without asking for credentials again.
+  # The time the user will be remembered  asking for credentials again.
   # config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
@@ -174,7 +174,7 @@ Devise.setup do |config|
   config.email_regexp = /\A[^@\s]+@[^@\s]+\z/
 
   # ==> Configuration for :timeoutable
-  # The time you want to timeout the user session without activity. After this
+  # The time you want to timeout the user session  activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
   # config.timeout_in = 30.minutes
 

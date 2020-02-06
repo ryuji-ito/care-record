@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: care-record_production
-  username: care-record
-  password: <%= ENV['CARE-RECORD_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  # database: care-record_production
+  # username: care-record
+  # password: <%= ENV['CARE-RECORD_DATABASE_PASSWORD'] %>
